@@ -2,7 +2,7 @@ import os
 import openai
 from pyswip import Prolog
 
-api_key = "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"
+api_key = ""
 openai.api_key = api_key
 # Initialize a Prolog instance
 prolog = Prolog()
