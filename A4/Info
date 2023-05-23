@@ -1,0 +1,39 @@
+Men = English, Spain, Ukraine Japanese Norway
+color = red, green, ivory, yellow, blue
+Cigarette = Winston, Chesterfield, kool, lucky strike, parliament
+Animal = Dog, Snails, Fox, Horse Zebra
+Drink = coffee, tea, milk,orangejuice , water
+
+    % rules 1 - 5
+    Men3 #= Cigarette1, 
+    Men5 #= 1,
+
+    % rules 6 - 10
+    Color1 #= Drink4, 
+    Color1 #= Color5 + 1, 
+    Cigarette5 #= Animal4, 
+    Cigarette2 #= Color3, 
+    Drink5 #= 3,
+
+    % rules 11 - 14
+    Men5 #= Color4 + 1 #\/ Men5 #= Color4 - 1, 
+    Cigarette3 #= Drink1,
+    Animal3 #= Cigarette4 + 1 #\/ Animal3 #= Cigarette4 - 1,
+    Animal5 #= Cigarette2 + 1 #\/ Animal5 #= Cigarette2 - 1,
+
+    solve([Englishman, Spainiard, Ukrainian, Japanese, Norwegian], [Red, Green, Ivory, Yellow, Blue],[Winston, Chesterfield, Kool, LuckyStrike, Parliament],[Dog, Snail, Fox, Horse, Zebra],[Coffee, Tea, Milk, OrangeJuice, Water]).
+
+%Rule 1: Englishman lives in red house
+%Rule 2: Spaniard Owns Dog
+%Rule 3: Coffee is drunk in green house
+%Rule 4: ukrainian drinks tea
+%Rule 5:  Green house right of ivory house
+%Rule 6: Winston smoker owns snails
+%Rule 7: Kools smoker in Yellow house
+%Rule 8: Milk is in the Middle house
+%Rule 9: Norwegian lives in first house to the left
+%Rule 10: Chesterfiled smoker lives next to man with fox
+%Rule 11: Kools smoker next to horse owner
+%Rule 12: Lucky Strike smoker drink oj
+%Rule 13: Japanese smokes Parliament
+%Rule 14: Norwegian is next to blue house

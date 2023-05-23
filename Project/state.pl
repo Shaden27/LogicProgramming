@@ -1,0 +1,1 @@
+ movieGenre(Query, sciFi), movieLength(Query, normal), movieRating(Query, high), movieDirector(Query, 'Stanley Kubrick'), movie(Query).
